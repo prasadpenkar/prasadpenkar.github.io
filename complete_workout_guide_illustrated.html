@@ -1,0 +1,559 @@
+<!-- Complete Illustrated Workout Guide -->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Source+Serif+4:ital,opt@0,8..60;1,8..60&family=Source+Sans+3:wght@400;600&display=swap');
+
+  :root{
+    --ink:#1a1714;
+    --paper:#f6f1e7;
+    --paper2:#efe7d6;
+    --accent:#c8431f;      /* burnt orange */
+    --accent2:#1f6f6b;     /* deep teal */
+    --line:#d8cdb6;
+    --muted:#6d655a;
+    --good:#1f6f6b;
+    --bad:#c8431f;
+  }
+  *{box-sizing:border-box;}
+  .wg{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Source Sans 3',system-ui,sans-serif;
+    line-height:1.6;
+    max-width:880px;
+    margin:0 auto;
+    padding:28px 26px 80px;
+    font-size:16px;
+  }
+  .wg h1,.wg h2,.wg h3,.wg .kicker{font-family:'Barlow Condensed',sans-serif;letter-spacing:.01em;}
+  .wg h1{font-size:46px;line-height:.98;margin:0 0 6px;font-weight:700;text-transform:uppercase;}
+  .wg .sub{font-family:'Barlow Condensed';font-size:21px;color:var(--accent);font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin:0 0 18px;}
+  .wg h2{font-size:30px;margin:46px 0 4px;font-weight:700;border-bottom:3px solid var(--ink);padding-bottom:6px;text-transform:uppercase;}
+  .wg h3{font-size:23px;margin:30px 0 8px;font-weight:600;color:var(--accent2);}
+  .wg .part{font-family:'Barlow Condensed';font-size:15px;font-weight:700;letter-spacing:.22em;color:var(--accent);text-transform:uppercase;display:block;margin-top:8px;}
+  .wg p{margin:8px 0;}
+  .wg strong{font-weight:600;}
+  .wg em{font-style:italic;color:var(--muted);font-family:'Source Serif 4',serif;}
+  .wg a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(200,67,31,.35);font-weight:600;}
+  .wg a:hover{background:rgba(200,67,31,.08);}
+  .wg .note{background:var(--paper2);border-left:4px solid var(--accent2);padding:12px 16px;margin:16px 0;border-radius:0 6px 6px 0;font-size:15px;}
+  .wg table{width:100%;border-collapse:collapse;margin:14px 0;font-size:15px;}
+  .wg th{background:var(--ink);color:var(--paper);text-align:left;padding:8px 10px;font-family:'Barlow Condensed';text-transform:uppercase;letter-spacing:.04em;font-weight:600;}
+  .wg td{padding:7px 10px;border-bottom:1px solid var(--line);}
+  .wg tr:nth-child(even) td{background:rgba(216,205,182,.25);}
+  .wg .day{background:var(--paper2);border:1px solid var(--line);border-radius:10px;padding:6px 20px 18px;margin:18px 0;}
+  .wg .day h3{margin-top:14px;}
+  .wg .ex{margin:20px 0;padding:16px 0 4px;border-top:1px solid var(--line);}
+  .wg .ex h3{margin:0 0 4px;}
+  .wg .links{font-family:'Barlow Condensed';font-size:15px;font-weight:600;letter-spacing:.02em;margin:4px 0 10px;}
+  .wg .links a{margin-right:18px;white-space:nowrap;}
+  .wg .fig{display:block;background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px;margin:12px 0;max-width:420px;}
+  .wg .figcap{font-family:'Source Serif 4',serif;font-style:italic;font-size:13px;color:var(--muted);text-align:center;margin-top:2px;}
+  .wg .cue{color:var(--accent2);font-weight:600;}
+  .wg .miss{color:var(--accent);font-weight:600;}
+  .wg .grp{font-family:'Barlow Condensed';text-transform:uppercase;letter-spacing:.14em;color:var(--muted);font-size:14px;margin-top:34px;}
+  .wg .lede{font-family:'Source Serif 4',serif;font-size:18px;line-height:1.5;}
+  /* SVG figure helpers */
+  .wg svg .bone{stroke:var(--ink);stroke-width:5;stroke-linecap:round;fill:none;}
+  .wg svg .head{fill:var(--ink);}
+  .wg svg .ref{stroke:var(--muted);stroke-width:1.5;stroke-dasharray:5 5;fill:none;}
+  .wg svg .hi{stroke:var(--accent);stroke-width:6;stroke-linecap:round;fill:none;}
+  .wg svg .ok{stroke:var(--good);stroke-width:5;stroke-linecap:round;fill:none;}
+  .wg svg .equip{fill:var(--paper2);stroke:var(--muted);stroke-width:2;}
+  .wg svg text{font-family:'Barlow Condensed',sans-serif;font-size:13px;fill:var(--ink);font-weight:600;}
+  .wg svg .lbl-good{fill:var(--good);}
+  .wg svg .lbl-bad{fill:var(--bad);}
+  @media print{ .wg{max-width:none;} .wg a{color:var(--ink);border:none;} }
+</style>
+
+<div class="wg">
+
+<span class="part">Complete Illustrated Guide</span>
+<h1>Workout &amp; Exercise Guide</h1>
+<p class="sub">Muscle Gain + Stamina · 44 yrs · 67 kg · 165 cm</p>
+
+<p class="lede">A full 6-day training plan plus a form guide for every movement — with posture diagrams for the key lifts and, for each exercise, links to tutorial videos and real demonstration photos.</p>
+
+<div class="note">
+<strong>About the visuals.</strong> The diagrams below are simplified <em>side-view posture maps</em> drawn to show the body angles that matter most — they're not photos. For real photos of each machine and setup, tap the <strong>🖼 See photos</strong> link on each exercise, and for full demonstrations tap <strong>▶ Watch tutorials</strong>. Both open live searches that always stay current.
+</div>
+
+<div class="note">
+<strong>Assumptions.</strong> You have a treadmill, bike, rower, standard machines, and free weights, and can perform basic movements safely. New to lifting? Start at the lower end of every set/rep range with light weight for 2–3 weeks. Any joint, heart, or blood-pressure concerns — check with your doctor first.
+</div>
+
+<!-- ============ PART 1 ============ -->
+<h2>Part 1 — The Plan</h2>
+
+<h3>Core principles</h3>
+<p><strong>Progressive overload</strong> drives muscle gain — each week add a little weight, a rep, or a set. Hit the top of a rep range with good form on all sets? Add ~2.5–5% next time. Train in the <strong>8–12 rep</strong> range for muscle, resting <strong>60–90 sec</strong> between sets. <strong>Stamina</strong> builds through progressively longer cardio and intervals (Days 3 &amp; 6). At 44, <strong>recovery matters</strong> — 7–9 hrs sleep, and don't skip the rest day. And always: <strong>form over weight.</strong></p>
+
+<h3>Nutrition (essential for muscle gain)</h3>
+<table>
+<tr><th>Target</th><th>Amount</th></tr>
+<tr><td>Protein</td><td>~110–145 g/day (1.6–2.2 g per kg bodyweight)</td></tr>
+<tr><td>Calories</td><td>Small surplus, ~250–400 kcal above maintenance</td></tr>
+<tr><td>Rate of gain</td><td>~0.25–0.5 kg/month (more just adds fat)</td></tr>
+<tr><td>Water</td><td>~2.5–3 L/day, more on heavy days</td></tr>
+</table>
+
+<h3>Weekly schedule</h3>
+<table>
+<tr><th>Day</th><th>Focus</th><th>Cardio</th><th>Strength</th></tr>
+<tr><td>1</td><td>Upper body</td><td>Treadmill warm-up</td><td>Machines + free weights</td></tr>
+<tr><td>2</td><td>Lower body + core</td><td>Bike warm-up</td><td>Machines + free weights</td></tr>
+<tr><td>3</td><td>Stamina / conditioning</td><td>Row &amp; cycle intervals</td><td>Light full-body circuit</td></tr>
+<tr><td>4</td><td>Upper body (variation)</td><td>Treadmill warm-up</td><td>Machines + free weights</td></tr>
+<tr><td>5</td><td>Lower body + core</td><td>Row warm-up</td><td>Machines + free weights</td></tr>
+<tr><td>6</td><td>Endurance</td><td>Long steady-state</td><td>Accessory circuit</td></tr>
+<tr><td>7</td><td><strong>Rest</strong></td><td>Easy walk + stretch</td><td>—</td></tr>
+</table>
+
+<div class="note"><strong>Every session.</strong> Warm-up 5–8 min (the day's cardio easy + dynamic moves + 1–2 light feeler sets per lift). Cool-down 5–8 min (slow walk + static stretches, hold 20–30 sec).</div>
+
+<div class="day">
+<h3>Day 1 — Upper Body</h3>
+<p><em>Cardio 10 min: treadmill, brisk incline walk or easy jog.</em></p>
+<table><tr><th>Exercise</th><th>Type</th><th>Sets × Reps</th></tr>
+<tr><td>Chest press machine</td><td>Machine</td><td>3 × 10–12</td></tr>
+<tr><td>Lat pulldown</td><td>Machine</td><td>3 × 10–12</td></tr>
+<tr><td>Seated DB shoulder press</td><td>Free</td><td>3 × 8–12</td></tr>
+<tr><td>Seated cable / machine row</td><td>Machine</td><td>3 × 10–12</td></tr>
+<tr><td>Incline dumbbell press</td><td>Free</td><td>3 × 8–12</td></tr>
+<tr><td>Dumbbell lateral raise</td><td>Free</td><td>3 × 12–15</td></tr>
+<tr><td>Dumbbell biceps curl</td><td>Free</td><td>3 × 10–12</td></tr>
+<tr><td>Triceps pushdown</td><td>Machine</td><td>3 × 10–12</td></tr></table>
+<p><em>Core: plank 3 × 30–45 sec.</em></p>
+</div>
+
+<div class="day">
+<h3>Day 2 — Lower Body + Core</h3>
+<p><em>Cardio 10 min: stationary bike, moderate.</em></p>
+<table><tr><th>Exercise</th><th>Type</th><th>Sets × Reps</th></tr>
+<tr><td>Leg press machine</td><td>Machine</td><td>4 × 10–12</td></tr>
+<tr><td>Goblet squat</td><td>Free</td><td>3 × 10–12</td></tr>
+<tr><td>Leg curl machine</td><td>Machine</td><td>3 × 10–12</td></tr>
+<tr><td>Leg extension machine</td><td>Machine</td><td>3 × 12–15</td></tr>
+<tr><td>Dumbbell Romanian deadlift</td><td>Free</td><td>3 × 10–12</td></tr>
+<tr><td>Calf raise</td><td>Machine/Free</td><td>4 × 12–20</td></tr></table>
+<p><em>Core: leg raises 3 × 12 · side plank 3 × 30 sec/side.</em></p>
+</div>
+
+<div class="day">
+<h3>Day 3 — Stamina / Conditioning</h3>
+<p><strong>Intervals (~25–30 min)</strong> — row or cycle (alternate weekly): 5 min easy → <strong>8 × (1 min hard / 1 min easy)</strong> → 5 min easy.<br>
+<strong>Treadmill finisher (10 min):</strong> steady jog or fast incline walk.<br>
+<strong>Light circuit (~15 min)</strong> — 2 rounds, minimal rest: bodyweight squats ×15 · push-ups ×10–15 · DB rows ×12 · walking lunges ×10/leg · plank 30 sec.</p>
+</div>
+
+<div class="day">
+<h3>Day 4 — Upper Body (variation)</h3>
+<p><em>Cardio 10 min: treadmill incline walk.</em></p>
+<table><tr><th>Exercise</th><th>Type</th><th>Sets × Reps</th></tr>
+<tr><td>Incline chest press machine</td><td>Machine</td><td>3 × 10–12</td></tr>
+<tr><td>Wide-grip pulldown</td><td>Machine</td><td>3 × 10–12</td></tr>
+<tr><td>Dumbbell bench press</td><td>Free</td><td>3 × 8–12</td></tr>
+<tr><td>Single-arm dumbbell row</td><td>Free</td><td>3 × 10–12</td></tr>
+<tr><td>Dumbbell shoulder press</td><td>Free</td><td>3 × 8–12</td></tr>
+<tr><td>Rear-delt fly</td><td>Machine</td><td>3 × 12–15</td></tr>
+<tr><td>Hammer curl</td><td>Free</td><td>3 × 10–12</td></tr>
+<tr><td>Overhead triceps extension</td><td>Free</td><td>3 × 10–12</td></tr></table>
+<p><em>Core: cable/machine crunch 3 × 15.</em></p>
+</div>
+
+<div class="day">
+<h3>Day 5 — Lower Body + Core</h3>
+<p><em>Cardio 10 min: rower, easy-moderate.</em></p>
+<table><tr><th>Exercise</th><th>Type</th><th>Sets × Reps</th></tr>
+<tr><td>Hack squat or leg press</td><td>Machine</td><td>4 × 10–12</td></tr>
+<tr><td>Dumbbell walking lunges</td><td>Free</td><td>3 × 10/leg</td></tr>
+<tr><td>Leg curl machine</td><td>Machine</td><td>3 × 12–15</td></tr>
+<tr><td>Hip thrust</td><td>Free/Machine</td><td>3 × 10–12</td></tr>
+<tr><td>Leg extension machine</td><td>Machine</td><td>3 × 12–15</td></tr>
+<tr><td>Seated calf raise</td><td>Machine</td><td>4 × 15–20</td></tr></table>
+<p><em>Core: Russian twists 3 × 20 · plank 3 × 45 sec.</em></p>
+</div>
+
+<div class="day">
+<h3>Day 6 — Endurance + Accessory</h3>
+<p><strong>Steady-state cardio (30–40 min):</strong> treadmill, cycle, or row at a conversational-to-moderate pace; add 2–5 min or more distance each week.<br>
+<strong>Accessory circuit (~15 min)</strong> — 3 rounds: face pulls ×15 · DB shrugs ×15 · cable curl ×12 · triceps pushdown ×12 · calf raise ×20.</p>
+</div>
+
+<div class="day">
+<h3>Day 7 — Rest / Active Recovery</h3>
+<p>No lifting. 20–30 min easy walk, 10–15 min stretching/mobility. Part of the program, not optional.</p>
+</div>
+
+<h3>Progression over 8–12 weeks</h3>
+<p><strong>Wk 1–2:</strong> learn movements, set baselines, lower rep end. <strong>Wk 3–6:</strong> add weight/reps wherever form holds; push cardio. <strong>Wk 7–8:</strong> deload if beaten up (−40% volume), then push again. <strong>Track everything</strong> — if a number stalls for weeks, change something (food, sleep, or the exercise).</p>
+
+<h3>Safety reminders</h3>
+<p>Warm up fully. Stop on sharp joint pain (muscle burn is fine). Breathe out on exertion, never hold your breath under load. Chest pain, dizziness, or unusual breathlessness → stop and seek medical advice.</p>
+
+<!-- ============ PART 2 ============ -->
+<h2>Part 2 — Form Guide</h2>
+<p class="lede">For each: setup, execution, key cues, and common mistakes — with a posture diagram for the form-critical lifts.</p>
+<div class="note"><strong>Two universal rules:</strong> ① Control the lowering (2–3 sec down) on every lift — that's where most growth and joint protection live. ② Breathe out on the hard part, in on the return.</div>
+
+<p class="grp">Cardio</p>
+
+<div class="ex">
+<h3>Treadmill (jog / incline walk)</h3>
+<div class="links"><a href="https://www.youtube.com/results?search_query=treadmill+running+walking+proper+form">▶ Watch tutorials</a><a href="https://www.google.com/search?q=treadmill+running+posture&tbm=isch">🖼 See photos</a></div>
+<p>Start slow, step on, stand tall, eyes forward. Incline walk at 5–10% briskly, or jog landing mid-foot under your hips. <span class="cue">Cue:</span> don't hold the handrails — let arms swing. <span class="miss">Avoid:</span> hunching the console, gripping rails, speed so high your stride breaks.</p>
+</div>
+
+<div class="ex">
+<h3>Stationary bike</h3>
+<div class="links"><a href="https://www.youtube.com/results?search_query=stationary+bike+proper+form+setup">▶ Watch tutorials</a><a href="https://www.google.com/search?q=stationary+bike+seat+setup+posture&tbm=isch">🖼 See photos</a></div>
+<svg class="fig" viewBox="0 0 240 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Stationary bike seat-height posture">
+  <ellipse class="equip" cx="120" cy="150" rx="70" ry="10"/>
+  <circle class="equip" cx="80" cy="120" r="22"/><circle class="equip" cx="160" cy="120" r="22"/>
+  <line class="bone" x1="120" y1="55" x2="118" y2="95"/>            <!-- torso -->
+  <circle class="head" cx="124" cy="44" r="10"/>
+  <line class="bone" x1="118" y1="95" x2="150" y2="100"/>           <!-- thigh -->
+  <line class="hi"   x1="150" y1="100" x2="160" y2="120"/>          <!-- shin to pedal -->
+  <line class="bone" x1="120" y1="62" x2="150" y2="70"/>           <!-- arm -->
+  <text x="168" y="98" class="lbl-good">slight knee bend ~25°</text>
+  <text x="60" y="40">tall back</text>
+</svg>
+<div class="figcap">Seat height: a slight knee bend at the bottom of the stroke — not locked, not cramped.</div>
+<p>Pedal in smooth full circles at moderate resistance, sit tall, relax the grip, knees tracking straight. <span class="miss">Avoid:</span> seat too low, rocking hips, white-knuckling the bars.</p>
+</div>
+
+<div class="ex">
+<h3>Rower</h3>
+<div class="links"><a href="https://www.youtube.com/results?search_query=rowing+machine+proper+form+technique">▶ Watch tutorials</a><a href="https://www.google.com/search?q=rowing+machine+technique+sequence&tbm=isch">🖼 See photos</a></div>
+<p>Feet strapped, sit tall, light overhand grip. Sequence: <strong>legs → back → arms</strong>; return arms → back → legs. <span class="cue">Cue:</span> ~60% of power from the legs; handle moves in a straight horizontal line. <span class="miss">Avoid:</span> arms-first pulling, rounding the back, rushing the recovery.</p>
+</div>
+
+<p class="grp">Chest — pressing</p>
+
+<div class="ex">
+<h3>Chest press machine / Incline chest press</h3>
+<div class="links"><a href="https://www.youtube.com/results?search_query=chest+press+machine+proper+form">▶ Watch tutorials</a><a href="https://www.google.com/search?q=chest+press+machine&tbm=isch">🖼 See photos</a></div>
+<p>Seat set so handles align with mid-chest (incline: upper chest), feet flat, back on the pad. Press to nearly straight (no hard lock), return slowly to a gentle chest stretch. <span class="cue">Cue:</span> shoulder blades pulled back and down. <span class="miss">Avoid:</span> wrong seat height, elbows flaring to 90°, bouncing the stack.</p>
+</div>
+
+<div class="ex">
+<h3>Dumbbell bench press / Incline dumbbell press</h3>
+<div class="links"><a href="https://www.youtube.com/results?search_query=dumbbell+bench+press+proper+form">▶ Watch tutorials</a><a href="https://www.google.com/search?q=dumbbell+bench+press+elbow+angle&tbm=isch">🖼 See photos</a></div>
+<svg class="fig" viewBox="0 0 260 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Dumbbell bench press elbow angle from above">
+  <rect class="equip" x="40" y="78" width="180" height="16" rx="4"/>  <!-- bench top view -->
+  <line class="bone" x1="130" y1="86" x2="130" y2="40"/>             <!-- body midline -->
+  <circle class="head" cx="130" cy="34" r="9"/>
+  <line class="hi" x1="130" y1="60" x2="95" y2="86"/>               <!-- arm -->
+  <line class="hi" x1="130" y1="60" x2="165" y2="86"/>
+  <circle cx="92" cy="88" r="6" class="equip"/><circle cx="168" cy="88" r="6" class="equip"/>
+  <path class="ref" d="M130 70 A 20 20 0 0 0 112 80"/>
+  <text x="60" y="120" class="lbl-good">elbows ~45° from torso</text>
+  <text x="150" y="120" class="lbl-good">not flared to 90°</text>
+</svg>
+<div class="figcap">Top-down view: tuck the elbows to roughly 45°, don't let them flare straight out.</div>
+<p>Kick the dumbbells to shoulder level lying back, feet flat. Press up and slightly together; lower slowly until elbows are about level with the torso. <span class="miss">Avoid:</span> banging dumbbells at the top, flaring elbows, hard lower-back arch.</p>
+</div>
+
+<div class="ex">
+<h3>Push-ups</h3>
+<div class="links"><a href="https://www.youtube.com/results?search_query=push+up+proper+form">▶ Watch tutorials</a><a href="https://www.google.com/search?q=push+up+proper+form+plank+line&tbm=isch">🖼 See photos</a></div>
+<svg class="fig" viewBox="0 0 260 130" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Push-up straight body line">
+  <line class="ref" x1="30" y1="50" x2="240" y2="92"/>
+  <circle class="head" cx="40" cy="48" r="9"/>
+  <line class="ok" x1="48" y1="50" x2="225" y2="90"/>             <!-- straight body -->
+  <line class="bone" x1="90" y1="62" x2="92" y2="110"/>          <!-- arm down -->
+  <line class="bone" x1="120" y1="68" x2="122" y2="110"/>
+  <text x="120" y="40" class="lbl-good">straight line: head → hips → heels</text>
+  <text x="160" y="120">hands under chest</text>
+</svg>
+<div class="figcap">Body stays a straight plank line — no sagging hips, no piked butt. Elbows ~45°.</div>
+<p>Hands slightly wider than shoulders. Lower chest to an inch off the floor, press up. <span class="cue">Cue:</span> squeeze glutes, brace core. <em>Too hard? Hands on a bench.</em></p>
+</div>
+
+<p class="grp">Back — pulling</p>
+
+<div class="ex">
+<h3>Lat pulldown / Wide-grip pulldown</h3>
+<div class="links"><a href="https://www.youtube.com/results?search_query=lat+pulldown+proper+form">▶ Watch tutorials</a><a href="https://www.google.com/search?q=lat+pulldown+machine+form&tbm=isch">🖼 See photos</a></div>
+<svg class="fig" viewBox="0 0 220 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Lat pulldown pulling to upper chest">
+  <line class="equip" x1="40" y1="20" x2="180" y2="20" stroke-width="6"/>  <!-- bar -->
+  <circle class="head" cx="110" cy="78" r="11"/>
+  <line class="bone" x1="110" y1="90" x2="108" y2="150"/>          <!-- torso slight lean -->
+  <line class="hi" x1="110" y1="100" x2="80" y2="40"/>            <!-- arms to bar -->
+  <line class="hi" x1="110" y1="100" x2="140" y2="40"/>
+  <line class="bone" x1="108" y1="150" x2="150" y2="160"/>        <!-- thigh -->
+  <text x="120" y="120" class="lbl-good">pull to upper chest</text>
+  <text x="120" y="138">drive elbows down + back</text>
+  <text x="40" y="185">slight lean back, chest up</text>
+</svg>
+<div class="figcap">Pull the bar to the upper chest by driving the elbows down — not behind the neck.</div>
+<p>Grip wider than shoulders, knees under the pad. Control back to a full stretch. <span class="cue">Cue:</span> pull with the elbows, not the hands. <span class="miss">Avoid:</span> heaving with momentum, behind-the-neck pulls, no full extension.</p>
+</div>
+
+<div class="ex">
+<h3>Seated cable / machine row</h3>
+<div class="links"><a href="https://www.youtube.com/results?search_query=seated+cable+row+proper+form">▶ Watch tutorials</a><a href="https://www.google.com/search?q=seated+cable+row+form&tbm=isch">🖼 See photos</a></div>
+<p>Sit tall, feet braced, slight knee bend. Pull the handle to the lower ribs/belly, elbows straight back, squeeze the shoulder blades; return slowly. <span class="cue">Cue:</span> torso upright and still. <span class="miss">Avoid:</span> yanking with the lower back, shrugging, rounding forward.</p>
+</div>
+
+<div class="ex">
+<h3>Single-arm dumbbell row</h3>
+<div class="links"><a href="https://www.youtube.com/results?search_query=single+arm+dumbbell+row+proper+form">▶ Watch tutorials</a><a href="https://www.google.com/search?q=single+arm+dumbbell+row+bench&tbm=isch">🖼 See photos</a></div>
+<p>One knee + same-side hand on a bench, flat back ~parallel to the floor, dumbbell hanging. Pull to the hip leading with the elbow; lower to a full stretch. <span class="cue">Cue:</span> keep the torso square. <span class="miss">Avoid:</span> rotating for momentum, shrugging, rounding the back.</p>
+</div>
+
+<div class="ex">
+<h3>Bent-over dumbbell row (Day 3 circuit)</h3>
+<div class="links"><a href="https://www.youtube.com/results?search_query=bent+over+dumbbell+row+proper+form">▶ Watch tutorials</a><a href="https://www.google.com/search?q=bent+over+dumbbell+row+flat+back&tbm=isch">🖼 See photos</a></div>
+<svg class="fig" viewBox="0 0 240 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bent-over row flat back hinge">
+  <circle class="head" cx="55" cy="55" r="10"/>
+  <line class="ok" x1="62" y1="58" x2="170" y2="92"/>            <!-- flat back -->
+  <line class="bone" x1="170" y1="92" x2="172" y2="150"/>       <!-- leg -->
+  <line class="bone" x1="170" y1="92" x2="145" y2="148"/>
+  <line class="hi" x1="120" y1="76" x2="118" y2="120"/>         <!-- arm hanging -->
+  <line class="hi" x1="118" y1="120" x2="118" y2="92"/>
+  <text x="70" y="40" class="lbl-good">flat back, ~45° hinge</text>
+  <text x="60" y="135">row to lower ribs</text>
+</svg>
+<div class="figcap">Hinge at the hips with a flat back; row both dumbbells to the lower ribs.</div>
+<p><span class="miss">Avoid:</span> a rounded back, standing too upright (becomes a shrug), momentum.</p>
+</div>
+
+<div class="ex">
+<h3>Face pulls</h3>
+<div class="links"><a href="https://www.youtube.com/results?search_query=face+pull+proper+form">▶ Watch tutorials</a><a href="https://www.google.com/search?q=cable+face+pull+form&tbm=isch">🖼 See photos</a></div>
+<p>Rope on a pulley at head height, palms in, step back for tension. Pull toward the face, separating the hands so they end beside your ears, elbows high. <span class="cue">Cue:</span> lead with the elbows — great for shoulder health. <span class="miss">Avoid:</span> too much weight, dropping the elbows, jerking.</p>
+</div>
+
+<p class="grp">Shoulders</p>
+
+<div class="ex">
+<h3>Dumbbell shoulder press (seated/standing)</h3>
+<div class="links"><a href="https://www.youtube.com/results?search_query=dumbbell+shoulder+press+proper+form">▶ Watch tutorials</a><a href="https://www.google.com/search?q=dumbbell+shoulder+press+form&tbm=isch">🖼 See photos</a></div>
+<svg class="fig" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Shoulder press vertical alignment">
+  <line class="ref" x1="100" y1="20" x2="100" y2="190"/>
+  <circle class="head" cx="100" cy="60" r="11"/>
+  <line class="bone" x1="100" y1="72" x2="100" y2="150"/>        <!-- torso -->
+  <line class="hi" x1="100" y1="90" x2="78" y2="55"/>           <!-- arm pressing up -->
+  <line class="hi" x1="78" y1="55" x2="80" y2="25"/>
+  <line class="hi" x1="100" y1="90" x2="122" y2="55"/>
+  <line class="hi" x1="122" y1="55" x2="120" y2="25"/>
+  <text x="105" y="40" class="lbl-good">press straight up</text>
+  <text x="105" y="120">ribs down, core braced</text>
+  <text x="20" y="175">wrists stacked over elbows</text>
+</svg>
+<div class="figcap">Press straight up over the shoulders; keep ribs down so the lower back doesn't over-arch.</div>
+<p>Dumbbells at shoulder height, palms forward, elbows under wrists. Press up to nearly straight, lower slowly to ear level. <span class="miss">Avoid:</span> over-arching, clanking at the top, pressing in front of the body.</p>
+</div>
+
+<div class="ex">
+<h3>Dumbbell lateral raise</h3>
+<div class="links"><a href="https://www.youtube.com/results?search_query=dumbbell+lateral+raise+proper+form">▶ Watch tutorials</a><a href="https://www.google.com/search?q=dumbbell+lateral+raise+form&tbm=isch">🖼 See photos</a></div>
+<p>Stand tall, slight elbow bend, raise out to the sides to about shoulder height, lower slowly. <span class="cue">Cue:</span> lead with the elbows; light weight. <span class="miss">Avoid:</span> swinging, going far above shoulder height, too heavy.</p>
+</div>
+
+<div class="ex">
+<h3>Rear-delt fly (machine/cable)</h3>
+<div class="links"><a href="https://www.youtube.com/results?search_query=rear+delt+fly+proper+form">▶ Watch tutorials</a><a href="https://www.google.com/search?q=rear+delt+fly+reverse+pec+deck&tbm=isch">🖼 See photos</a></div>
+<p>Chest on the pad (reverse pec deck) or crossed cables. Sweep arms out and back in a wide arc, squeeze the rear shoulders, return slowly with a constant slight elbow bend. <span class="miss">Avoid:</span> bending/straightening arms to cheat, using traps, too heavy.</p>
+</div>
+
+<div class="ex">
+<h3>Dumbbell shrugs</h3>
+<div class="links"><a href="https://www.youtube.com/results?search_query=dumbbell+shrug+proper+form">▶ Watch tutorials</a><a href="https://www.google.com/search?q=dumbbell+shrug+form&tbm=isch">🖼 See photos</a></div>
+<p>Dumbbells at the sides, shrug straight up toward the ears, pause, lower slowly. <span class="cue">Cue:</span> straight up and down — don't roll; arms stay straight. <span class="miss">Avoid:</span> rolling the shoulders, using the arms, head bobbing forward.</p>
+</div>
+
+<p class="grp">Arms</p>
+
+<div class="ex">
+<h3>Dumbbell biceps curl</h3>
+<div class="links"><a href="https://www.youtube.com/results?search_query=dumbbell+bicep+curl+proper+form">▶ Watch tutorials</a><a href="https://www.google.com/search?q=dumbbell+bicep+curl+form&tbm=isch">🖼 See photos</a></div>
+<p>Dumbbells at the sides, palms forward. Curl by bending the elbow, upper arm still, squeeze, lower slowly. <span class="cue">Cue:</span> elbows pinned to the sides. <span class="miss">Avoid:</span> swinging, elbows drifting forward, fast drop.</p>
+</div>
+
+<div class="ex">
+<h3>Hammer curl</h3>
+<div class="links"><a href="https://www.youtube.com/results?search_query=hammer+curl+proper+form">▶ Watch tutorials</a><a href="https://www.google.com/search?q=hammer+curl+form&tbm=isch">🖼 See photos</a></div>
+<p>Same as the curl but <strong>palms face each other</strong> (neutral grip) throughout — hits the forearm and outer arm more. Same cues and mistakes.</p>
+</div>
+
+<div class="ex">
+<h3>Cable curl</h3>
+<div class="links"><a href="https://www.youtube.com/results?search_query=cable+curl+proper+form">▶ Watch tutorials</a><a href="https://www.google.com/search?q=cable+bicep+curl+form&tbm=isch">🖼 See photos</a></div>
+<p>Low pulley with a bar, step back, palms up. Curl with elbows pinned, squeeze, lower slowly — control both directions. <span class="miss">Avoid:</span> leaning back to heave, elbows flaring/drifting.</p>
+</div>
+
+<div class="ex">
+<h3>Triceps pushdown</h3>
+<div class="links"><a href="https://www.youtube.com/results?search_query=tricep+pushdown+proper+form">▶ Watch tutorials</a><a href="https://www.google.com/search?q=tricep+pushdown+cable+form&tbm=isch">🖼 See photos</a></div>
+<p>High pulley, rope/bar, elbows tucked, slight forward lean. Push to straight arms, squeeze; return only to forearms-parallel, elbows pinned. <span class="cue">Cue:</span> only the forearms move. <span class="miss">Avoid:</span> elbows flaring forward, using bodyweight, bouncing.</p>
+</div>
+
+<div class="ex">
+<h3>Overhead dumbbell triceps extension</h3>
+<div class="links"><a href="https://www.youtube.com/results?search_query=overhead+dumbbell+tricep+extension+proper+form">▶ Watch tutorials</a><a href="https://www.google.com/search?q=overhead+dumbbell+tricep+extension&tbm=isch">🖼 See photos</a></div>
+<p>One dumbbell in both hands overhead, arms extended. Lower behind the head by bending the elbows (upper arms vertical), press up. <span class="cue">Cue:</span> elbows point forward, stay close to the head. <span class="miss">Avoid:</span> elbows flaring, moving the upper arms, too heavy near the head.</p>
+</div>
+
+<p class="grp">Legs</p>
+
+<div class="ex">
+<h3>Leg press machine</h3>
+<div class="links"><a href="https://www.youtube.com/results?search_query=leg+press+machine+proper+form">▶ Watch tutorials</a><a href="https://www.google.com/search?q=leg+press+machine&tbm=isch">🖼 See photos</a></div>
+<p>Back flat on the pad, feet shoulder-width, mid-foot. Release safeties, lower to ~90° knee bend, press up <strong>without hard-locking</strong>. <span class="cue">Cue:</span> knees track over toes; lower back stays glued to the pad. <span class="miss">Avoid:</span> going so low the back rounds off the pad, hard lock-out, knees caving.</p>
+</div>
+
+<div class="ex">
+<h3>Hack squat machine</h3>
+<div class="links"><a href="https://www.youtube.com/results?search_query=hack+squat+machine+proper+form">▶ Watch tutorials</a><a href="https://www.google.com/search?q=hack+squat+machine&tbm=isch">🖼 See photos</a></div>
+<p>Shoulders under the pads, back flat on the backrest, feet shoulder-width. Lower to ~90°, drive up through the heels. <span class="cue">Cue:</span> knees over toes, don't lock hard. <span class="miss">Avoid:</span> heels lifting, knees caving, bouncing.</p>
+</div>
+
+<div class="ex">
+<h3>Goblet squat (dumbbell)</h3>
+<div class="links"><a href="https://www.youtube.com/results?search_query=goblet+squat+proper+form">▶ Watch tutorials</a><a href="https://www.google.com/search?q=goblet+squat+form&tbm=isch">🖼 See photos</a></div>
+<svg class="fig" viewBox="0 0 240 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Goblet squat depth and knee tracking">
+  <line class="ref" x1="60" y1="30" x2="60" y2="165"/>           <!-- vertical ref -->
+  <circle class="head" cx="70" cy="42" r="10"/>
+  <line class="bone" x1="70" y1="54" x2="78" y2="100"/>         <!-- torso upright -->
+  <line class="bone" x1="78" y1="100" x2="120" y2="100"/>       <!-- thigh ~parallel -->
+  <line class="ok" x1="120" y1="100" x2="118" y2="160"/>        <!-- shin to floor -->
+  <rect x="58" y="60" width="18" height="22" rx="3" class="equip"/> <!-- DB at chest -->
+  <line class="bone" x1="40" y1="160" x2="118" y2="160"/>       <!-- floor -->
+  <text x="100" y="86" class="lbl-good">thighs ~parallel</text>
+  <text x="125" y="135" class="lbl-good">knee over toe</text>
+  <text x="80" y="40">chest up</text>
+</svg>
+<div class="figcap">Hold the weight at the chest, sit to about parallel, knees tracking over the toes, chest up.</div>
+<p>Feet shoulder-width, toes slightly out. Push the hips back, drive up through the heels. <span class="miss">Avoid:</span> heels rising, knees caving, rounded upper back, partial depth.</p>
+</div>
+
+<div class="ex">
+<h3>Bodyweight squat</h3>
+<div class="links"><a href="https://www.youtube.com/results?search_query=bodyweight+squat+proper+form">▶ Watch tutorials</a><a href="https://www.google.com/search?q=bodyweight+squat+form&tbm=isch">🖼 See photos</a></div>
+<p>Same movement as the goblet squat with no weight, hands out front or on hips. Same cues and mistakes.</p>
+</div>
+
+<div class="ex">
+<h3>Walking lunges (dumbbell/bodyweight)</h3>
+<div class="links"><a href="https://www.youtube.com/results?search_query=walking+lunge+proper+form">▶ Watch tutorials</a><a href="https://www.google.com/search?q=walking+lunge+form&tbm=isch">🖼 See photos</a></div>
+<svg class="fig" viewBox="0 0 240 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Lunge 90/90 knee angles">
+  <circle class="head" cx="120" cy="32" r="10"/>
+  <line class="bone" x1="120" y1="44" x2="120" y2="95"/>        <!-- upright torso -->
+  <line class="ok" x1="120" y1="95" x2="80" y2="95"/>          <!-- front thigh -->
+  <line class="ok" x1="80" y1="95" x2="80" y2="150"/>         <!-- front shin vertical -->
+  <line class="hi" x1="120" y1="95" x2="165" y2="120"/>       <!-- back thigh -->
+  <line class="hi" x1="165" y1="120" x2="150" y2="150"/>      <!-- back shin -->
+  <line class="bone" x1="60" y1="152" x2="180" y2="152"/>     <!-- floor -->
+  <text x="40" y="120" class="lbl-good">front shin vertical</text>
+  <text x="150" y="110">back knee ↓</text>
+  <text x="125" y="60">torso upright</text>
+</svg>
+<div class="figcap">Both knees bend to ~90°; front shin stays vertical (knee over the foot, not way past the toes).</div>
+<p>Step forward into the lunge, back knee nearly to the floor; push off the front foot into the next step. <span class="miss">Avoid:</span> steps too short, leaning forward, rushing.</p>
+</div>
+
+<div class="ex">
+<h3>Leg curl machine (hamstrings)</h3>
+<div class="links"><a href="https://www.youtube.com/results?search_query=leg+curl+machine+proper+form">▶ Watch tutorials</a><a href="https://www.google.com/search?q=leg+curl+machine&tbm=isch">🖼 See photos</a></div>
+<p>Pad just above the heels. Curl the heels toward the glutes, squeeze, lower slowly. <span class="cue">Cue:</span> hips stay down; movement only at the knee. <span class="miss">Avoid:</span> lifting the hips, jerking, fast drop.</p>
+</div>
+
+<div class="ex">
+<h3>Leg extension machine (quads)</h3>
+<div class="links"><a href="https://www.youtube.com/results?search_query=leg+extension+machine+proper+form">▶ Watch tutorials</a><a href="https://www.google.com/search?q=leg+extension+machine&tbm=isch">🖼 See photos</a></div>
+<p>Pad on the front of the lower shins, knees aligned with the pivot. Straighten the legs, squeeze the quads, lower slowly. <span class="cue">Cue:</span> pause at the top, no hard knee lock. <span class="miss">Avoid:</span> swinging, fast drop, too heavy on the knees.</p>
+</div>
+
+<div class="ex">
+<h3>Dumbbell Romanian deadlift (RDL)</h3>
+<div class="links"><a href="https://www.youtube.com/results?search_query=dumbbell+romanian+deadlift+proper+form">▶ Watch tutorials</a><a href="https://www.google.com/search?q=dumbbell+romanian+deadlift+flat+back&tbm=isch">🖼 See photos</a></div>
+<svg class="fig" viewBox="0 0 260 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Romanian deadlift hip hinge, flat back vs rounded back">
+  <!-- correct -->
+  <circle class="head" cx="55" cy="40" r="9"/>
+  <line class="ok" x1="60" y1="44" x2="120" y2="80"/>          <!-- flat back -->
+  <line class="bone" x1="120" y1="80" x2="118" y2="150"/>      <!-- leg slight bend -->
+  <line class="bone" x1="95" y1="62" x2="95" y2="105"/>       <!-- arm/dumbbell close -->
+  <rect x="89" y="105" width="12" height="9" rx="2" class="equip"/>
+  <text x="58" y="28" class="lbl-good">✓ FLAT BACK</text>
+  <text x="40" y="170" class="lbl-good">hinge at hips, push butt back</text>
+  <!-- wrong -->
+  <circle class="head" cx="195" cy="58" r="9"/>
+  <path class="hi" d="M198 62 Q 230 70 240 110"/>            <!-- rounded back -->
+  <line class="bone" x1="240" y1="110" x2="238" y2="150"/>
+  <text x="180" y="40" class="lbl-bad">✗ ROUNDED</text>
+  <text x="185" y="170" class="lbl-bad">back rounds = injury risk</text>
+</svg>
+<div class="figcap">Hinge at the hips with a <strong>flat back</strong> (left). The moment the back rounds (right) — stop and reset.</div>
+<p>Feet hip-width, knees slightly bent (and they stay bent). Lower the dumbbells down the front of the legs to a strong hamstring stretch (~mid-shin), then drive the hips forward to stand. <span class="cue">Cue:</span> weights close to the legs, flat back throughout. <span class="miss">Avoid:</span> rounding the back (#1 injury risk), squatting instead of hinging, weights drifting away.</p>
+</div>
+
+<div class="ex">
+<h3>Hip thrust (barbell/machine)</h3>
+<div class="links"><a href="https://www.youtube.com/results?search_query=barbell+hip+thrust+proper+form">▶ Watch tutorials</a><a href="https://www.google.com/search?q=barbell+hip+thrust+form&tbm=isch">🖼 See photos</a></div>
+<svg class="fig" viewBox="0 0 260 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Hip thrust top position straight line knees to shoulders">
+  <rect class="equip" x="20" y="45" width="50" height="12" rx="3"/>   <!-- bench -->
+  <circle class="head" cx="40" cy="38" r="9"/>
+  <line class="ok" x1="48" y1="48" x2="150" y2="70"/>          <!-- torso flat at top -->
+  <line class="bone" x1="150" y1="70" x2="150" y2="125"/>      <!-- shin vertical -->
+  <circle cx="118" cy="58" r="9" class="equip"/>              <!-- bar on hips -->
+  <line class="bone" x1="60" y1="125" x2="200" y2="125"/>     <!-- floor -->
+  <text x="55" y="40" class="lbl-good">knees→shoulders in a line</text>
+  <text x="120" y="100" class="lbl-good">shins vertical</text>
+  <text x="60" y="148">squeeze glutes at top</text>
+</svg>
+<div class="figcap">At the top, knees-to-shoulders form a straight line and the shins are vertical — squeeze the glutes, don't over-arch the back.</div>
+<p>Upper back on a bench, padded bar across the hips, feet flat. Drive through the heels to full hip extension, lower slowly. <span class="miss">Avoid:</span> arching the back instead of squeezing glutes, pushing through the toes, half reps.</p>
+</div>
+
+<div class="ex">
+<h3>Calf raise (standing/seated)</h3>
+<div class="links"><a href="https://www.youtube.com/results?search_query=calf+raise+proper+form">▶ Watch tutorials</a><a href="https://www.google.com/search?q=calf+raise+machine+form&tbm=isch">🖼 See photos</a></div>
+<p>Balls of the feet on a platform, heels free. Rise up as high as possible, squeeze, lower the heels slowly below the platform for a full stretch. <span class="miss">Avoid:</span> tiny bouncy reps, no bottom stretch, rushing.</p>
+</div>
+
+<p class="grp">Core</p>
+
+<div class="ex">
+<h3>Plank</h3>
+<div class="links"><a href="https://www.youtube.com/results?search_query=plank+proper+form">▶ Watch tutorials</a><a href="https://www.google.com/search?q=plank+proper+form&tbm=isch">🖼 See photos</a></div>
+<svg class="fig" viewBox="0 0 260 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Plank straight body line">
+  <line class="ref" x1="35" y1="45" x2="235" y2="80"/>
+  <circle class="head" cx="42" cy="44" r="8"/>
+  <line class="ok" x1="50" y1="46" x2="225" y2="78"/>          <!-- straight body -->
+  <line class="bone" x1="95" y1="56" x2="95" y2="100"/>       <!-- forearm -->
+  <line class="bone" x1="95" y1="100" x2="120" y2="100"/>
+  <text x="110" y="36" class="lbl-good">head → hips → heels: straight</text>
+  <text x="150" y="112">squeeze glutes, brace abs</text>
+</svg>
+<div class="figcap">Forearms under the shoulders; hips level — no sag, no pike.</div>
+<p><span class="miss">Avoid:</span> sagging hips, raised butt, holding the breath, craning the neck up.</p>
+</div>
+
+<div class="ex">
+<h3>Side plank</h3>
+<div class="links"><a href="https://www.youtube.com/results?search_query=side+plank+proper+form">▶ Watch tutorials</a><a href="https://www.google.com/search?q=side+plank+form&tbm=isch">🖼 See photos</a></div>
+<p>On one forearm, body sideways in a straight line, feet stacked. Lift the hips to a straight line, hold, switch sides. <span class="cue">Cue:</span> shoulder over elbow, hips lifted. <span class="miss">Avoid:</span> hips dropping, rotating forward, elbow ahead of the shoulder.</p>
+</div>
+
+<div class="ex">
+<h3>Hanging or lying leg raises</h3>
+<div class="links"><a href="https://www.youtube.com/results?search_query=lying+leg+raise+proper+form">▶ Watch tutorials</a><a href="https://www.google.com/search?q=lying+leg+raise+form&tbm=isch">🖼 See photos</a></div>
+<p>Hang from a bar, or lie flat with hands under the hips. Legs fairly straight, raise using the abs, lower slowly. <span class="cue">Cue:</span> control the lowering; keep the lower back pressed down (lying). <span class="miss">Avoid:</span> swinging, arching the lower back, using hip flexors instead of abs.</p>
+</div>
+
+<div class="ex">
+<h3>Cable / machine crunch</h3>
+<div class="links"><a href="https://www.youtube.com/results?search_query=cable+crunch+proper+form">▶ Watch tutorials</a><a href="https://www.google.com/search?q=cable+crunch+form&tbm=isch">🖼 See photos</a></div>
+<p>Kneel facing a high cable with a rope behind the head (or use the ab-crunch machine). Crunch down by curling the spine — ribs toward pelvis — using the abs; return slowly. <span class="miss">Avoid:</span> hinging at the hips only, pulling with the arms, going too fast.</p>
+</div>
+
+<div class="ex">
+<h3>Russian twists</h3>
+<div class="links"><a href="https://www.youtube.com/results?search_query=russian+twist+proper+form">▶ Watch tutorials</a><a href="https://www.google.com/search?q=russian+twist+form&tbm=isch">🖼 See photos</a></div>
+<p>Sit, knees bent, heels down or lifted, torso leaned back ~45°, light weight at the chest. Rotate to tap toward the floor on each side. <span class="cue">Cue:</span> rotation from the torso/obliques, chest up. <span class="miss">Avoid:</span> moving only the arms, hard rounding of the back, going too fast.</p>
+</div>
+
+<div class="note"><strong>When to ask for help.</strong> Unsure a machine fits your body? Ask gym staff to check your positioning once — a 30-second adjustment saves weeks of strain. On the most form-sensitive lifts (<strong>Romanian deadlift, hip thrust, lunges</strong>), film a set from the side once to confirm your back stays flat and knees track properly.</p></div>
+
+</div>
